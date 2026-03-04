@@ -6,8 +6,6 @@ repositories:
     url: "https://repo1.maven.org/maven2/"
   - id: "jboss-public"
     url: "https://repository.jboss.org/nexus/content/groups/public/"
-#  - id: "mrrc"
-#    url: "https://maven.repository.redhat.com/ga/"
 manifest:
   maven:
     groupId: "org.wildfly.channels"
@@ -20,29 +18,26 @@ repositories:
     url: "https://repo1.maven.org/maven2/"
   - id: "jboss-public"
     url: "https://repository.jboss.org/nexus/content/groups/public/"
-  - id: "local"
+  - id: "local-prospero"
     url: "file:/home/thofman/Projects/prospero/maven-repo"
-#  - id: "mrrc"
-#    url: "https://maven.repository.redhat.com/ga/"
 manifest:
   maven:
     groupId: "org.wildfly.prospero"
     artifactId: "prospero-wildfly-galleon-pack"
+    vesion: "1.4.0.Beta4-SNAPSHOT"
 ---
-# This channel is here to override default wildfly-core artifacts version from the wildfly-ee fp
+# This channel is here to override wildfly-core installation-manager artifact version
 schemaVersion: "2.0.0"
 name: "wildfly-core"
 repositories:
   - id: "central"
     url: "https://repo1.maven.org/maven2/"
-  - id: "jboss-public"
-    url: "https://repository.jboss.org/nexus/content/groups/public/"
-  - id: "local"
+  - id: "local-wildfly-core"
     url: "file:/home/thofman/Projects/wildfly-core/maven-repo"
-#  - id: "mrrc"
-#    url: "https://maven.repository.redhat.com/ga/"
+  - id: "local-channels"
+    url: "file:manifest-maven-repo"
 manifest:
   maven:
-    groupId: "org.wildfly.core"
-    artifactId: "wildfly-core-galleon-pack"
+    groupId: "channels"
+    artifactId: "wildfly-core"
 
